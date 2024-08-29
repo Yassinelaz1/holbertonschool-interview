@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""You have n number of locked boxes in front of you. Each box is numbered sequentially 
-from 0 to n - 1 and each box may contain keys to the other boxes.
+"""You have n number of locked boxes in front of you. Each box is numbered
+sequentially from 0 to n - 1 and each box may contain keys to the other boxes.
 
 Write a method that determines if all the boxes can be opened.
 
@@ -14,7 +14,9 @@ Return True if all boxes can be opened, else return False"""
 
 
 def canUnlockAll(boxes):
-    """You have n number of locked boxes in front of you. Each box is numbered sequentially from 0 to n - 1 and each box may contain keys to the other boxes.
+    """You have n number of locked boxes in front of you. Each box
+    is numbered sequentially from 0 to n - 1 and
+    each box may contain keys to the other boxes.
 
 Write a method that determines if all the boxes can be opened.
 
@@ -26,13 +28,13 @@ There can be keys that do not have boxes
 The first box boxes[0] is unlocked
 Return True if all boxes can be opened, else return False"""
     n = len(boxes)
-    unlocked = [False] * n 
-    unlocked[0] = True 
-    keys = boxes[0] 
-       
+    unlocked = [False] * n
+    unlocked[0] = True
+    keys = boxes[0]
+
     for key in keys:
         if key < n and not unlocked[key]:
             unlocked[key] = True
             keys.extend(boxes[key])
-    
+
     return all(unlocked)
